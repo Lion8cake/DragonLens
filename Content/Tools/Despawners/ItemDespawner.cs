@@ -12,9 +12,9 @@ namespace DragonLens.Content.Tools.Despawners
 
 		public override void OnActivate()
 		{
-			foreach (Item item in Main.item)
+			foreach (WorldItem item in Main.item)
 			{
-				item.active = false;
+				item.type = 0;
 			}
 
 			NetSend();
@@ -22,9 +22,9 @@ namespace DragonLens.Content.Tools.Despawners
 
 		public override void RecievePacket(BinaryReader reader, int sender)
 		{
-			foreach (Item item in Main.item)
+			foreach (WorldItem item in Main.item)
 			{
-				item.active = false;
+				item.type = 0;
 			}
 
 			if (Main.netMode == NetmodeID.Server)

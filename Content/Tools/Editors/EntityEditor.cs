@@ -99,7 +99,9 @@ namespace DragonLens.Content.Tools.Editors
 
 		public override void DraggableUdpate(GameTime gameTime)
 		{
-			if (ready && (entity is null || !entity.active) && tileEntity is null)
+			if (ready && (entity is null
+				//|| !entity.active
+				) && tileEntity is null)
 			{
 				basicEditorList.Clear();
 				moddedEditor.Clear();
@@ -119,7 +121,9 @@ namespace DragonLens.Content.Tools.Editors
 
 				ready = false;
 			}
-			else if (!ready && (entity != null && entity.active || tileEntity != null))
+			else if (!ready && (entity != null 
+				//&& entity.active 
+				|| tileEntity != null))
 			{
 				Append(basicEditorScroll);
 				moddedEditor.hide = false;
@@ -133,7 +137,9 @@ namespace DragonLens.Content.Tools.Editors
 
 		public override void Recalculate()
 		{
-			if ((entity is null || !entity.active) && tileEntity is null)
+			if ((entity is null
+				//|| !entity.active
+				) && tileEntity is null)
 			{
 				width = 400;
 				height = 130;
@@ -409,7 +415,9 @@ namespace DragonLens.Content.Tools.Editors
 			Utils.DrawBorderStringBig(spriteBatch, label, basePos + new Vector2(icon.Width + 24, 16), Color.White, 0.6f);
 
 			// Labels
-			if ((entity is null || !entity.active) && tileEntity is null)
+			if ((entity is null 
+				//|| !entity.active
+				) && tileEntity is null)
 			{
 				Utils.DrawBorderStringBig(spriteBatch, GetLocalizedText("Tutorial"), BoundingBox.Center.ToVector2() + Vector2.UnitY * 38, Color.White, 0.8f, 0.5f, 0.5f);
 			}
@@ -420,7 +428,9 @@ namespace DragonLens.Content.Tools.Editors
 
 				GUIHelper.DrawBox(spriteBatch, preview, ThemeHandler.ButtonColor);
 
-				if (entity != null && entity.active)
+				if (entity != null 
+					//&& entity.active
+					)
 				{
 					preview.Inflate(-4, -4);
 					Vector2 previewPos = (entity.Center - Main.Camera.ScaledPosition) * Main.GameViewMatrix.Zoom;

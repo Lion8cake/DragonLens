@@ -132,7 +132,7 @@ namespace DragonLens.Content.GUI.FieldEditors
 				HandleText();
 
 				// draw ime panel, note that if there's no composition string then it won't draw anything
-				Main.instance.DrawWindowsIMEPanel(GetDimensions().Position());
+				SearchBar.DrawWindowsIMEPanel(GetDimensions().Position());
 			}
 
 			Vector2 pos = GetDimensions().Position() + Vector2.One * 4;

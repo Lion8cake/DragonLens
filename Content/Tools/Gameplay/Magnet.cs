@@ -105,16 +105,16 @@ namespace DragonLens.Content.Tools.Gameplay
 		{
 			if (Magnet.active && PermissionHandler.CanUseTools(Player))
 			{
-				foreach (Item item in Main.item)
+				foreach (WorldItem item in Main.item)
 				{
 					item.Center = Player.Center;
 				}
 			}
 			else if (Magnet.voidActive && PermissionHandler.CanUseTools(Player))
 			{
-				foreach (Item item in Main.item)
+				foreach (WorldItem item in Main.item)
 				{
-					item.active = false;
+					item.type = 0;
 				}
 			}
 		}

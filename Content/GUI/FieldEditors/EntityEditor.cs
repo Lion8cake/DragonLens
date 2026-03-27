@@ -51,7 +51,9 @@ namespace DragonLens.Content.GUI.FieldEditors
 
 			GUIHelper.DrawBox(sprite, preview, ThemeHandler.ButtonColor);
 
-			if (value != null && value.active)
+			if (value != null 
+				//&& value.active
+				)
 			{
 				preview.Inflate(-4, -4);
 				var source = new Rectangle((int)value.Center.X - 60, (int)value.Center.Y - 60, 120, 120);

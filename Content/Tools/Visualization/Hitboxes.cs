@@ -185,7 +185,7 @@ namespace DragonLens.Content.Tools.Visualization
 			{
 				var list = new List<Rectangle>();
 
-				foreach (Item item in Main.item)
+				foreach (WorldItem item in Main.item)
 				{
 					if (item.active)
 					{

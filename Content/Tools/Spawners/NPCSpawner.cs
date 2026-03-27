@@ -73,7 +73,7 @@ namespace DragonLens.Content.Tools.Spawners
 					continue;
 
 				var npc = new NPC();
-				npc.SetDefaults_ForNetId(k, 1);
+				npc.SetDefaults_ForNetId(k, default(NPCSpawnParams), 1);
 				npc.netID = k;
 
 				buttons.Add(new NPCButton(npc, this));
