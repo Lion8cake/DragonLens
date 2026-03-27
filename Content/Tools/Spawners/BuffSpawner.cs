@@ -226,7 +226,7 @@ namespace DragonLens.Content.Tools.Spawners
 		public int type;
 
 		public override string Identifier => Lang.GetBuffName(type);
-		public override string Key => (ModContent.GetModBuff(type)?.Mod?.Name ?? "Terraria") + ":" + (ModContent.GetModBuff(type)?.Name ?? BuffID.Search.GetName(type));
+		public override string Key => (ModContent.GetModBuff(type)?.Mod?.Name ?? "Terraria") + ":" + (ModContent.GetModBuff(type)?.Name ?? (BuffID.Search.ContainsId(type) ? BuffID.Search.GetName(type) : ""));
 
 		public BuffButton(int type, Browser browser) : base(browser)
 		{
